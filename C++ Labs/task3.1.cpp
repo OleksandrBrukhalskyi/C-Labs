@@ -8,3 +8,6 @@ int main()
     std::cout << "Hello World!\n";
 }
 
+int findMinNumByOddIndex(const int *arr , int size) {
+
+}
