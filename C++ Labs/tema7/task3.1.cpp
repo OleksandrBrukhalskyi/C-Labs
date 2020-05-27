@@ -2,12 +2,21 @@
 //
 
 #include <iostream>
-
+using namespace std;
 int main()
-{
-    std::cout << "Hello World!\n";
+{   
+    const int size = 5;
+    int arr[size] = {13,7,12,14,7};
+    int res = findMinNumByEvenIndex(arr, size);
+    cout << res << endl;
 }
 
-int findMinNumByOddIndex(const int *arr , int size) {
-
-}
+int findMinNumByEvenIndex(const int *arr , int size) {
+    int index = 0;
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] % 2 == 0) {
+            index++;
+        }
+    }
+    return index;
+}  
