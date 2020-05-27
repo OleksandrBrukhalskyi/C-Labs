@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
-
+#include <algorithm>
+#include <cmath>
 using namespace std;
 
 int* init(int *arr, int size) {
@@ -27,11 +28,19 @@ int multOfElementsWithEvenIndexes(const int *arr, int size) {
 	}
 	return mult;
 }
+int sumBeforeMaxElementByAbs(const int* arr, int size) {
+	int max_abs = 0;
+	for (int i = 0; i < size; ++i) {
+		 max_abs = max(abs(arr[i]),arr[i+1]);
+	}
+	return max_abs;
+}
 int main() {
 	const int size = 10;
 	int arr[size];
 	int* p = init(arr, size);
 	printArray(arr, size);
 	cout <<"Res:"<< multOfElementsWithEvenIndexes(arr, size) << endl;
+	cout << "Max abs:" << sumBeforeMaxElementByAbs(arr, size) << endl;
 
 }
