@@ -30,10 +30,20 @@ int multOfElementsWithEvenIndexes(const int *arr, int size) {
 }
 int sumBeforeMaxElementByAbs(const int* arr, int size) {
 	int max_abs = 0;
+	int sum = 0;
+	int abs_index = 0;
 	for (int i = 0; i < size; ++i) {
-		 max_abs = max(abs(arr[i]),arr[i+1]);
+		auto itr = find(arr, arr + size, max_abs);
+		abs_index = distance(arr,itr);
+		max_abs = *max_element(arr, arr + size);
+		abs(max_abs);
 	}
-	return max_abs;
+	cout << abs_index << endl;
+	cout << "Max abs:" << max_abs << endl;
+	for (int i = 0; i < abs_index; ++i) {
+		sum += arr[i];
+	}
+	return sum;
 }
 int main() {
 	const int size = 10;
@@ -41,6 +51,6 @@ int main() {
 	int* p = init(arr, size);
 	printArray(arr, size);
 	cout <<"Res:"<< multOfElementsWithEvenIndexes(arr, size) << endl;
-	cout << "Max abs:" << sumBeforeMaxElementByAbs(arr, size) << endl;
+	cout << "Sum:" << sumBeforeMaxElementByAbs(arr, size) << endl;
 
 }
