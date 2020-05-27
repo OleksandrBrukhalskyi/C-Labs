@@ -3,6 +3,15 @@
 
 #include <iostream>
 using namespace std;
+int findMinNumByEvenIndex(const int* arr, int size) {
+    int min = arr[0];
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] % 2 == 0 || i % 2 == 0) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
 int main()
 {   
     const int size = 5;
@@ -11,12 +20,3 @@ int main()
     cout << res << endl;
 }
 
-int findMinNumByEvenIndex(const int *arr , int size) {
-    int index = 0;
-    for (int i = 0; i < size; ++i) {
-        if (arr[i] % 2 == 0) {
-            index++;
-        }
-    }
-    return index;
-}  
