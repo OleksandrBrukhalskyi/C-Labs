@@ -18,8 +18,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\task3.2.cpp">
+    <None Include="tema3.3.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
+    </None>
   </ItemGroup>
 </Project>
