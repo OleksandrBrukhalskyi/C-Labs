@@ -38,8 +38,8 @@ int sumBeforeMaxElementByAbs(const int* arr, int size) {
 		max_abs = *max_element(arr, arr + size);
 		abs(max_abs);
 	}
-	cout << abs_index << endl;
-	cout << "Max abs:" << max_abs << endl;
+	
+	cout << "Max absolute value:" << max_abs << endl;
 	for (int i = 0; i < abs_index; ++i) {
 		sum += arr[i];
 	}
@@ -50,7 +50,7 @@ int main() {
 	int arr[size];
 	int* p = init(arr, size);
 	printArray(arr, size);
-	cout <<"Res:"<< multOfElementsWithEvenIndexes(arr, size) << endl;
+	cout <<"Mult:"<< multOfElementsWithEvenIndexes(arr, size) << endl;
 	cout << "Sum:" << sumBeforeMaxElementByAbs(arr, size) << endl;
 
 }
