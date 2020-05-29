@@ -1,5 +1,6 @@
 #include <iostream>
 #include <locale.h>
+#include <iomanip>
 #include <algorithm>
 using namespace std;
 
@@ -9,13 +10,13 @@ struct Library {
     int yearOfPublishing;
     char group;
 };
-bool compareByAuthor(const struct Library& a, const struct Library& b) {
+bool compareByAuthor(Library a, Library b) {
     return a.authorSurname < b.authorSurname;
 }
 
 int main()
 {
-    setlocale(LC_ALL, "ukr");
+    setlocale(LC_CTYPE, "rus");
     Library library[2];
     for (int i = 0; i < 2; ++i) {
         cout << "Input author:" << endl;
@@ -27,19 +28,11 @@ int main()
         cout << "Input group:" << endl;
         cin >> library[i].group;
     }
-    cout << "INFO BEFORE SORT" << endl;
+    cout << "Library" << endl;
+    cout << "Author" << "\t\t\t\t" << "Name" << "\t\t\t\t\t" << "Year" << "\t\t\t\t" << "Group"<<endl;
+    sort(library, library+2, compareByAuthor);
     for (int i = 0; i < 2; ++i) {
-        cout << library[i].authorSurname << endl;
-        cout << library[i].bookName << endl;
-        cout << library[i].yearOfPublishing << endl;
-        cout << library[i].group << endl;
-    }
-    sort(library, library, compareByAuthor);
-    cout << "INFO AFTER SORT" << endl;
-    for (int i = 0; i < 2; ++i) {
-        cout << library[i].authorSurname << endl;
-        cout << library[i].bookName << endl;
-        cout << library[i].yearOfPublishing << endl;
-        cout << library[i].group << endl;
+        cout << library[i].authorSurname << "\t\t\t\t\t"; cout << library[i].bookName << "\t\t\t\t\t"; cout << library[i].yearOfPublishing << "\t\t\t\t\t"; cout << library[i].group << "\t\t\t\t\t"<<endl;
+       
     }
 }
