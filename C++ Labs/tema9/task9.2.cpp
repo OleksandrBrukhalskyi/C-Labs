@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 string longestWord(string str) {
 	string tmp = "";
@@ -19,6 +20,7 @@ string longestWord(string str) {
 int main() {
 	string str;
 	cout << "Input string:" << endl;
-	cin >> str;
+	getline(cin, str);
 	cout << "The longest word is " << longestWord(str) << endl;
+	system("pause");
 }
