@@ -3,55 +3,51 @@
 #include <algorithm>
 using namespace std;
 
-struct Library {
-    string authorSurname;
-    string bookName;
-    int yearOfPublishing;
+struct library {
+    string authorsurname;
+    string bookname;
+    int yearofpublishing;
     char group;
 };
-bool compareByAuthor(Library a, Library b) {
-    return a.authorSurname < b.authorSurname;
+bool comparebyauthor(library a, library b) {
+    return a.authorsurname < b.authorsurname;
 }
 
 int main()
 {
-    int n;
-    cout << "Input rows count:" << endl;
-    cin >> n;
-
-    setlocale(LC_CTYPE, "rus");
-    Library library[2];
+   const  int n = 3;
+    library library[n];
     int choice;
     for (int i = 0; i < n; ++i) {
-        cout << "Input author:" << endl;
-        cin >> library[i].authorSurname;
-        cout << "Input book name:" << endl;
-        cin >> library[i].bookName;
-        cout << "Input year:" << endl;
-        cin >> library[i].yearOfPublishing;
-        cout << "Input group: (1 - Fiction. 2 - Educational literature. 3 - Reference literature )" << endl;
+        cout << "input author:" << endl;
+        cin >> library[i].authorsurname;
+        cout << "input book name:" << endl;
+        cin >> library[i].bookname;
+        cout << "input year:" << endl;
+        cin >> library[i].yearofpublishing;
+        cout << "input group: (1 - fiction. 2 - educational literature. 3 - reference literature )" << endl;
         cin >> choice;
         while (choice!=1 && choice!=2 && choice!=3) {
-            cout << "Input group: (1 - Fiction. 2 - Educational literature. 3 - Reference literature )" << endl;
+            cout << "input group: (1 - fiction. 2 - educational literature. 3 - reference literature )" << endl;
             cin >> choice;
         }
         if (choice == 1) {
-            library[i].group = 'X';
+            library[i].group = 'x';
         }
         else if (choice == 2) {
-            library[i].group = 'Y';
+            library[i].group = 'y';
         }
         else {
-            library[i].group = 'C';
+            library[i].group = 'c';
         }
     }
     cout << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "| Library                                                                                                                                                                                                    |" << endl;
+    cout << "| library                                                                                                                                                                                                    |" << endl;
     cout << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
-    cout << "|Author|" << "\t\t\t\t" << "|Name|" << "\t\t\t\t\t" << "|Year|" << "\t\t\t\t" << "|Group|"<<endl;
-    sort(library, library+n, compareByAuthor);
+    cout << "|author|" << "\t\t\t\t" << "|name|" << "\t\t\t\t\t" << "|year|" << "\t\t\t\t" << "|group|"<<endl;
+    sort(library, library+n, comparebyauthor);
     for (int i = 0; i < n; ++i) {
-        cout << library[i].authorSurname << "\t\t\t\t\t"; cout << library[i].bookName << "\t\t\t\t\t"; cout << library[i].yearOfPublishing << "\t\t\t\t\t"; cout << library[i].group << "\t\t\t\t\t"<<endl;
+        cout << library[i].authorsurname << "\t\t\t\t\t"; cout << library[i].bookname << "\t\t\t\t\t"; cout << library[i].yearofpublishing << "\t\t\t\t\t"; cout << library[i].group << "\t\t\t\t\t"<<endl;
        
     }
     cout << "|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|" << endl;
